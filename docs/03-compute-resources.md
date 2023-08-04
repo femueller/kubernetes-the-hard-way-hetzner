@@ -63,13 +63,13 @@ Using `cx11` instances, slightly smaller than the t3.micro instances used in the
 
 ```sh
 for i in 0 1 2; do
-  hcloud server create \
-    --name controller-${i} \
-    --image ubuntu-18.04 \
-    --type cx11 \
-    --datacenter nbg1-dc3 # this is the Nuremberg data center
-    --ssh-key kubernetes-ssh \
-    --label "type=kubernetes,name=controller-${i}"
+	hcloud server create \
+		--name controller-${i} \
+		--image ubuntu-22.04 \
+		--type cx11 \
+		--datacenter nbg1-dc3 \
+		--ssh-key kubernetes-ssh \
+		--label "type=kubernetes,name=controller-${i}"
 done
 ```
 
@@ -77,13 +77,13 @@ done
 
 ```sh
 for i in 0 1; do
-  hcloud server create \
-    --name worker-${i} \
-    --image ubuntu-18.04 \
-    --type cx11 \
-    --datacenter nbg1-dc3 # this is the Nuremberg data center
-    --ssh-key kubernetes-ssh \
-    --label "type=kubernetes,name=worker-${i}"
+	hcloud server create \
+		--name worker-${i} \
+		--image ubuntu-22.04 \
+		--type cx11 \
+		--datacenter nbg1-dc3 \
+		--ssh-key kubernetes-ssh \
+		--label "type=kubernetes,name=worker-${i}"
 done
 ```
 
