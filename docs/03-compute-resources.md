@@ -91,7 +91,7 @@ done
 
 ```sh
 for i in 0 1 2; do
-  hcloud load-balancer add-target kubernetes-lb --server controller-{i}
+  hcloud load-balancer add-target kubernetes-lb --server controller-${i}
 done
 ```
 
@@ -144,7 +144,7 @@ done
 And for the last step, let's update the load balancer to forward tcp connections directly to the controllers.
 
 ```sh
-hcloud load-balancer add-server kubernetes-lb \
+hcloud load-balancer add-service kubernetes-lb \
   --listen-port 443 \
   --destination-port 6443 \
   --protocol tcp
