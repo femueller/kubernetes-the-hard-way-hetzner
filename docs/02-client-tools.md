@@ -78,6 +78,8 @@ The `kubectl` command line utility is used to interact with the Kubernetes API S
 
 ### OS X
 
+#### Manual
+
 ```
 curl -o kubectl https://storage.googleapis.com/kubernetes-release/release/v1.17.2/bin/darwin/amd64/kubectl
 ```
@@ -88,6 +90,12 @@ chmod +x kubectl
 
 ```
 sudo mv kubectl /usr/local/bin/
+```
+
+#### Homebrew
+
+```
+brew install kubectl
 ```
 
 ### Linux
