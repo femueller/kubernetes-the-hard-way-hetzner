@@ -13,7 +13,13 @@ You may need to pay 20 EUR upfront to be allowed to create the account, which in
 
 ### Install the hcloud CLI
 
+#### Manual installation
 Follow the hcloud CLI [documentation](https://github.com/hetznercloud/cli) to install and configure the `hcloud` command line utility.
+
+#### Via Homebrew
+```
+brew install hcloud
+```
 
 The current walkthrough was done with version 1.28.1.
 
