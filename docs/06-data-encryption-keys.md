@@ -38,8 +38,7 @@ Copy the `encryption-config.yaml` encryption config file to each controller inst
 for instance in controller-0 controller-1 controller-2; do
   external_ip=$(hcloud server ip ${instance})
 
-  scp -i kubernetes.ed25519 \
-  -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
+  scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null \
   encryption-config.yaml root@${external_ip}:~/
 done
 ```
