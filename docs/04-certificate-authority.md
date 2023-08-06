@@ -364,7 +364,7 @@ Copy the appropriate certificates and private keys to each worker instance:
 for instance in worker-0 worker-1; do
   external_ip=$(hcloud server ip worker-${i})
 
-  scp -i kubernetes.ed25519 ca.pem ${instance}-key.pem ${instance}.pem root@${external_ip}:~/
+  scp ca.pem ${instance}-key.pem ${instance}.pem root@${external_ip}:~/
 done
 ```
 
@@ -374,8 +374,7 @@ Copy the appropriate certificates and private keys to each controller instance:
 for instance in controller-0 controller-1 controller-2; do
   external_ip=$(hcloud server ip controller-${i})
 
-  scp -i kubernetes.ed25519 \
-    ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem \
+  scp ca.pem ca-key.pem kubernetes-key.pem kubernetes.pem \
     service-account-key.pem service-account.pem root@${external_ip}:~/
 done
 ```
