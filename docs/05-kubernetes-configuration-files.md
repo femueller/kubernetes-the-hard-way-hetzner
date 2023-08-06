@@ -186,7 +186,7 @@ Copy the appropriate `kubelet` and `kube-proxy` kubeconfig files to each worker 
 for instance in worker-0 worker-1; do
   external_ip=$(hcloud server ip ${instance})
 
-  scp -i kubernetes.ed25519 ${instance}.kubeconfig kube-proxy.kubeconfig root@${external_ip}:~/
+  scp ${instance}.kubeconfig kube-proxy.kubeconfig root@${external_ip}:~/
 done
 ```
 
@@ -196,8 +196,7 @@ Copy the appropriate `kube-controller-manager` and `kube-scheduler` kubeconfig f
 for instance in controller-0 controller-1 controller-2; do
   external_ip=$(hcloud server ip ${instance})
 
-  scp -i kubernetes.ed25519 \
-    admin.kubeconfig kube-controller-manager.kubeconfig kube-scheduler.kubeconfig root@${external_ip}:~/
+  scp admin.kubeconfig kube-controller-manager.kubeconfig kube-scheduler.kubeconfig root@${external_ip}:~/
 done
 ```
 
